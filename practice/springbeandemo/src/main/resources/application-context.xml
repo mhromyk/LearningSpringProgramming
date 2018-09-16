@@ -3,5 +3,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="beanB" class="com.infiniteskills.spring.BeanB"/>
+
+    <bean id="beanA" class="com.infiniteskills.spring.BeanA">
+        <property name="age" value="23" />
+        <property name="beanB">
+            <bean id="beanB2" class="com.infiniteskills.spring.BeanB"/>
+        </property>
+        <property name="calendar" >
+            <bean id="calendar" class="java.util.Calendar" factory-method="getInstance"/>
+        </property>
+    </bean>
+
 
 </beans>
